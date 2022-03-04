@@ -1,0 +1,58 @@
+Tutorial Full Uninstall mySQL
+=============================
+
+Untuk melakukan full uninstall mysql, kamu sebelumnya harus membackup atau mencadangkan Database yang telah kamu buat sebelumnya. Kalau sudah mari ikuti perintah-perintah di bawah ini dengan Terminal kamu.
+
+   sudo apt-get remove --purge mysql*
+   sudo apt-get purge mysql*
+   sudo apt-get autoremove
+   sudo apt-get autoclean
+   sudo apt-get remove dbconfig-mysql
+   
+Lakukan perintah diatas baris perbaris.
+
+
+Tutorial Install mySQL
+=====================
+
+Untuk menginstal MySQL di server Linux Anda, ikuti langkah-langkah di bawah ini:
+
+   # Refresh repository
+     sudo apt update
+
+   # Install mysql
+     sudo apt install mysql-server
+
+   #Setelah itu cek versi mysql
+    mysql --version
+    
+    
+Mengoperasikan MySQL
+====================
+
+Setelah itu muncul output ketika melakukan perintah mysql --version kurang lebih tampilannya seperti dibawah ini.
+
+   > mysql --version
+   > mysql  Ver 14.14 Distrib 5.7.32, for Linux (x86_64) using  EditLine wrapper
+
+Untuk melihat status mysql kita berjalan atau tidak, gunakan perintah terminal dibawah ini.
+
+   > sudo systemctl status mysql
+   
+ Maka akan muncul status seperti dibawah ini.
+
+   ● mysql.service - MySQL Community Server
+   Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+   Active: active (running) since Sat 2020-11-28 10:58:34 WIB; 22min ago
+   Main PID: 23257 (mysqld)
+   Tasks: 28 (limit: 4500)
+   CGroup: /system.slice/mysql.service
+           └─23257 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+           
+           
+           
+   Untuk memulai, menghentikan dan memulai ulang mySQL gunakan perintah dibawah ini.
+
+   sudo service mysql start # memulai mysql
+   sudo service mysql stop # menghentikan mysql
+   sudo service mysql restart # memulai ulang mysql
