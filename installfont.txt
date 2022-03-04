@@ -1,0 +1,5 @@
+Ubuntu 17.04, 18.04, 20.04 and later
+===================================
+
+1sudo apt update && \
+2sudo apt install fonts-firacode
