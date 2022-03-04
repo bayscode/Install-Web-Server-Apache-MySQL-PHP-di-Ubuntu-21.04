@@ -25,14 +25,22 @@ Langkah 8 dan 9 bisa di skip jika tidak menggunakan firewall
 MySQL
 ======
 1. Install MySQL
-        sudo apt install mysql-server
+- sudo apt install mysql-server
 2. Jalankan skrip keamanan untuk meningkatkan keamanan database
-        sudo mysql_secure_installation
+- sudo mysql_secure_installation
 3. Cek status MySQL
-        sudo service mysql status
+- sudo service mysql status
 
 
 PHP
 ====
 1. Install PHP
-        sudo apt install php libapache2-mod-php php-mysql
+- sudo apt install php libapache2-mod-php php-mysql
+
+Mengelola Proses Apache
+====
+1. sudo systemctl stop apache2 (Untuk menghentikan server web)
+2. sudo systemctl start apache2 (Untuk memulai server web saat berhenti)
+3. sudo systemctl restart apache2 (Untuk menghentikan lalu memulai layanan lagi)
+4. sudo systemctl reload apache2 (Jika Anda hanya membuat perubahan konfigurasi, Apache seringkali dapat memuat ulang tanpa memutus koneksi)
+5. sudo systemctl disable apache2 (Untuk mengaktifkan kembali layanan agar memulai saat boot)
